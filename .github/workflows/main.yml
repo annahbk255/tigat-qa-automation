@@ -27,4 +27,4 @@ jobs:
 
       - name: Run Pytest UI Suite
         run: |
-          python -m pytest tests/test_tigat_web.py -s -v
+          python -m pytest test_tigat_web.py -s -v

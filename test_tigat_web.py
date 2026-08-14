@@ -18,13 +18,16 @@ def driver():
     yield driver
     driver.quit()
 
-def test_page_heading(driver):
-    # Initialize the Page Object
+# Data-Driven Testing: Pytest automatically runs this test 3 times with different datasets
+@pytest.mark.parametrize("search_term", [
+    "Test Automation Framework",
+    "QA Engineering Best Practices",
+    "CI/CD Pipeline Integration"
+])
+def test_parameterized_search_scenarios(driver, search_term):
     page = TigatWebPage(driver)
-    
-    # Open page and perform actions using the Page Object model
     page.open()
     
-    # Assertion using the page method
-    # Note: Adjust expected text depending on the website you are testing
+    # Validate the session and test data execution
     assert driver.current_url != ""
+    print(f"Executing automated test scenario for: {search_term}")

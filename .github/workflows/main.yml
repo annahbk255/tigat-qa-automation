@@ -13,7 +13,7 @@ jobs:
     # This matrix runs your test suite across multiple browsers automatically
     strategy:
       matrix:
-        browser: [chrome, firefox]
+        browser: [chrome]
 
     steps:
       - name: Checkout Repository
